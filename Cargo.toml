@@ -7,3 +7,8 @@ edition = "2024"
 burn = { version = "0.21.0", features = ["train", "wgpu", "fusion"] }
 rand = { version = "0.9.2", features = ["std", "small_rng"] }
 rand_distr = { version = "0.5.1" }
+
+[dev-dependencies]
+# Pure-Rust CPU backend used to exercise the backend-generic model in tests
+# without spinning up WGPU.
+burn = { version = "0.21.0", features = ["flex"] }
